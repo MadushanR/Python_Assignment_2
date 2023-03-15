@@ -1,5 +1,5 @@
 import Product_Class
-
+import random
 
 print("Welcome to Programming Principles Sample Product Inventory")
 product_code = int(input("Please enter the Product Code : "))
@@ -35,4 +35,12 @@ print("\nSale Price : " , P1.getSale_price() , " CAD ")
 print("Manufacture Cost: " , P1.getManufacture_cost() , " CAD")
 print("Monthly Production: " , P1.getUnits_produced() , " units (Approx.) \n")
 
-
+month = 1
+while month <13:
+    print("Month ", month , " :")
+    print("   Manufactured : ", P1.getUnits_produced() , " units")
+    sold = random.randint(0,100)
+    print("   Sold : ", sold , " units")
+    stock = int(P1.getStock_level()) + int(P1.getUnits_produced()) - sold
+    print( "   Stock : ", stock)
+    month = month + 1
