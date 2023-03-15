@@ -35,25 +35,25 @@ class Product:
         self.units_sold = units_sold 
 
     def getProduct_Code(self):
-        print(self.product_code)
+        return self.product_code
 
     def getProduct_Name(self):
-        print(self.product_name)
+        return self.product_name
 
     def getSale_price(self):
-        print(self.sale_price)
+        return self.sale_price
 
     def getManufacture_cost(self):
-        print(self.manufacture_cost)
+        return self.manufacture_cost
 
     def getStock_level(self):
-        print(self.stock_level)
+        return self.stock_level
 
     def getUnits_produced(self):
-        print(self.units_produced)
+        return self.units_produced
 
     def getUnits_Sold(self):
-        print(self.units_sold)
+        return self.units_sold
     
     
 
