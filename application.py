@@ -37,16 +37,31 @@ print("Monthly Production: " , P1.getUnits_produced() , " units (Approx.) \n")
 
 month = 1
 total_sold = 0
+not_sold = []
 while month <13:
+
     print("Month ", month , " :")
-    print("   Manufactured : ", P1.getUnits_produced() , " units")
+    print("|   Manufactured : ", P1.getUnits_produced() , " units")
     sold = random.randint(int(P1.getUnits_produced())-10,int(P1.getUnits_produced())+10)
-    total_sold = total_sold + sold
-    print("   Sold : ", sold , " units")
-    stock = int(P1.getStock_level()) + int(P1.getUnits_produced()) - sold
-    P1.setStock_Level(stock)
-    print( "   Stock : ", stock , " units")
+    if (int(P1.getStock_level())+int(P1.getUnits_produced())) >= sold :
+        total_sold = total_sold + sold
+        print("|   Sold : ", sold , " units")
+        stock = int(P1.getStock_level()) + int(P1.getUnits_produced()) - sold
+        P1.setStock_Level(stock)
+        print( "|   Stock : ", stock , " units")
+    else :
+        stock = int(P1.getStock_level()) + int(P1.getUnits_produced())
+        P1.setStock_Level(stock)
+        print("|   Product required is ", sold , " but stock available is only", stock)
+        not_sold.append(month)
     month = month + 1
 
 net_profit = (total_sold * int(P1.getSale_price())) - (12 * int(P1.getUnits_produced())* int(P1.getManufacture_cost()))
 print("\n Net Profit : " , net_profit , " CAD")
+
+if len(not_sold) < 1 :
+    print("\n No failed sales")
+else :
+    print("\n Products were not sold in below months due to no stock :")
+    for i in not_sold:
+        print(" ",i)
