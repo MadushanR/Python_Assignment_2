@@ -54,7 +54,7 @@ A simple command-line application in Python that allows users to input product d
 1. Run the calculator script:
 
    ```bash
-   python profit_calculator.py
+   python application.py
    ```
 2. Follow the prompts to enter:
 
@@ -71,7 +71,7 @@ A simple command-line application in Python that allows users to input product d
 ## Configuration
 
 * No additional configuration is required.
-* If you wish to adjust input prompts or add new calculations, edit `profit_calculator.py`.
+* If you wish to adjust input prompts or add new calculations, edit `application.py`.
 
 ## Contributing
 
